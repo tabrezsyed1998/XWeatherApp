@@ -1,16 +1,18 @@
-# React + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React and Vite weather application that fetches current conditions from WeatherAPI when the user clicks **Search**.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Create a WeatherAPI key at [weatherapi.com](https://www.weatherapi.com/).
+2. Copy `.env.example` to a new `.env` file.
+3. Set `VITE_WEATHER_API_KEY` in `.env` to your key.
+4. Start the app with `npm run dev`.
 
-## React Compiler
+## Project structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/components/` — reusable UI components.
+- `src/services/` — external API access.
+- `src/App.jsx` — application state and search workflow.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The WeatherAPI key is read from `VITE_WEATHER_API_KEY`. Vite exposes variables prefixed with `VITE_` to the browser, so use a server-side proxy for a production app where the key must remain private.
