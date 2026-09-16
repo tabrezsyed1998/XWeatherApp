@@ -40,7 +40,7 @@ function App() {
           onSearch={handleSearch}
         />
 
-        {isLoading && <p className="loading-message">Loading data…</p>}
+        {isLoading && <p className="loading-message">Loading data...</p>}
 
         {weatherData && !isLoading && <WeatherCards weatherData={weatherData} />}
       </section>
